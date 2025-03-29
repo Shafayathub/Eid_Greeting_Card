@@ -208,3 +208,110 @@ button:hover {
     box-shadow: none;
   }
 }
+
+/* Tablet screens (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .app-container {
+    flex-direction: row; /* Side-by-side layout */
+  }
+
+  .result-column {
+    flex: 70; /* ~70% width for tablet */
+    padding: 15px;
+  }
+
+  .canvas-preview {
+    max-height: calc(100vh - 80px); /* Slightly less padding */
+  }
+
+  .customization-column {
+    flex: 30; /* ~30% width for controls */
+    min-width: 200px; /* Slightly narrower */
+    padding: 15px;
+  }
+
+  .result-column h1 {
+    font-size: 2em; /* Smaller title */
+  }
+
+  .section h3 {
+    font-size: 1.1em;
+  }
+
+  .section input,
+  .section select {
+    padding: 6px; /* Slightly smaller inputs */
+  }
+
+  .image-options img {
+    width: 50px;
+    height: 50px; /* Smaller thumbnails */
+  }
+}
+
+/* Mobile screens (<768px) */
+@media (max-width: 767px) {
+  .app-container {
+    flex-direction: column; /* Stack vertically */
+    height: auto; /* Allow scrolling */
+    overflow-y: auto;
+  }
+
+  .result-column {
+    flex: none;
+    width: 100%;
+    padding: 10px;
+    min-height: 50vh; /* Half screen height for canvas */
+  }
+
+  .canvas-preview {
+    max-height: calc(50vh - 60px); /* Adjusted for padding and title */
+    border-radius: 4px;
+  }
+
+  .result-column h1 {
+    font-size: 1.5em; /* Smaller title */
+    margin-bottom: 10px;
+  }
+
+  .customization-column {
+    flex: none;
+    width: 100%;
+    height: auto; /* Auto height for content */
+    min-width: 100%;
+    padding: 10px;
+    border-left: none;
+    border-top: 1px solid #424242;
+    box-shadow: none;
+  }
+
+  .section {
+    gap: 8px; /* Tighter spacing */
+  }
+
+  .section h3 {
+    font-size: 1em;
+  }
+
+  .section label {
+    font-size: 0.85em;
+  }
+
+  .section input,
+  .section select {
+    padding: 6px;
+    font-size: 0.85em;
+  }
+
+  .image-options img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .customization-column button {
+    position: relative; /* No sticky on mobile, flows naturally */
+    margin-top: 10px;
+    padding: 10px;
+  }
+}
+
