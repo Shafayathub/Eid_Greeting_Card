@@ -190,6 +190,26 @@ const App: React.FC = () => {
         </div>
 
         <div className="section">
+          <h3>Canvas Size</h3>
+          <label>Width:</label>
+          <input
+            type="number"
+            value={canvasWidth}
+            onChange={(e) => setCanvasWidth(Number(e.target.value))}
+            min="200"
+            max="2000"
+          />
+          <label>Height:</label>
+          <input
+            type="number"
+            value={canvasHeight}
+            onChange={(e) => setCanvasHeight(Number(e.target.value))}
+            min="200"
+            max="2000"
+          />
+        </div>
+
+        <div className="section">
           <h3>Text</h3>
           <input
             type="text"
@@ -328,25 +348,7 @@ const App: React.FC = () => {
           </select>
         </div>
 
-        <div className="section">
-          <h3>Canvas Size</h3>
-          <label>Width:</label>
-          <input
-            type="number"
-            value={canvasWidth}
-            onChange={(e) => setCanvasWidth(Number(e.target.value))}
-            min="200"
-            max="2000"
-          />
-          <label>Height:</label>
-          <input
-            type="number"
-            value={canvasHeight}
-            onChange={(e) => setCanvasHeight(Number(e.target.value))}
-            min="200"
-            max="2000"
-          />
-        </div>
+        
 
         <button onClick={generateCard}>Generate & Download Card</button>
       </div>
