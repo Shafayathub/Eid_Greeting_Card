@@ -1,0 +1,210 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1e1e1e; /* Dark gray background */
+  color: #e0e0e0; /* Light gray text */
+  overflow: hidden; /* Prevent body scroll */
+}
+
+/* Full-screen container */
+.app-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Result column (maximized, full height) */
+.result-column {
+  flex: 85; /* ~85% of width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2a2a; /* Darker gray for canvas area */
+  padding: 20px;
+  overflow: hidden;
+}
+
+.result-column h1 {
+  font-size: 2.5em;
+  color: #64b5f6; /* Light blue accent */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.canvas-preview {
+  border: 2px solid #424242; /* Darker border */
+  border-radius: 8px;
+  max-width: 100%;
+  max-height: calc(100vh - 100px); /* Full height minus padding and title */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Darker shadow */
+}
+
+/* Customization column (compact, full height, scrollable) */
+.customization-column {
+  flex: 15; /* ~15% of width */
+  background-color: #333333; /* Dark panel background */
+  border-left: 1px solid #424242; /* Subtle border */
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 250px;
+  height: 100vh;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Section styling */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section h3 {
+  font-size: 1.2em;
+  color: #64b5f6; /* Light blue for headers */
+  margin-bottom: 8px;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 5px;
+}
+
+.section label {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #b0bec5; /* Light gray for labels */
+  margin-top: 5px;
+}
+
+.section input,
+.section select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #616161; /* Darker border */
+  border-radius: 4px;
+  font-size: 0.9em;
+  background-color: #424242; /* Dark input background */
+  color: #e0e0e0; /* Light text */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.section input:focus,
+.section select:focus {
+  border-color: #64b5f6; /* Blue accent on focus */
+  box-shadow: 0 0 5px rgba(100, 181, 246, 0.5);
+  outline: none;
+}
+
+.section input[type="color"] {
+  padding: 2px;
+  height: 32px;
+  width: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Image options */
+.image-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-options img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.image-options img:hover {
+  transform: scale(1.05);
+}
+
+.image-options img.selected {
+  border-color: #64b5f6; /* Blue accent for selected */
+}
+
+/* Button styling */
+button {
+  padding: 12px;
+  background-color: #64b5f6; /* Light blue button */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #42a5f5; /* Slightly darker blue on hover */
+}
+
+/* Scrollbar styling for customization column */
+.customization-column::-webkit-scrollbar {
+  width: 8px;
+}
+
+.customization-column::-webkit-scrollbar-track {
+  background: #2a2a2a; /* Dark track */
+}
+
+.customization-column::-webkit-scrollbar-thumb {
+  background: #616161; /* Gray thumb */
+  border-radius: 4px;
+}
+
+.customization-column::-webkit-scrollbar-thumb:hover {
+  background: #757575; /* Lighter gray on hover */
+}
+
+.customization-column button {
+  position: sticky;
+  bottom: 20px;
+  margin-top: 20px; /* Adds space above for better separation */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .result-column,
+  .customization-column {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .result-column {
+    padding: 10px;
+  }
+
+  .canvas-preview {
+    max-height: 50vh;
+  }
+
+  .customization-column {
+    min-width: 100%;
+    height: auto;
+    border-left: none;
+    border-top: 1px solid #424242;
+    box-shadow: none;
+  }
+}
