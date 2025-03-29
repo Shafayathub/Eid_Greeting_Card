@@ -45,8 +45,8 @@ const App: React.FC = () => {
   const [nameFontSize, setNameFontSize] = useState<number>(25);
   const [designationFontSize, setDesignationFontSize] = useState<number>(20);
   const [textColor, setTextColor] = useState<string>('#FFFFFF');
-  const [messageX, setMessageX] = useState<number>(200);
-  const [messageY, setMessageY] = useState<number>(400);
+  const [messageX, setMessageX] = useState<number>(250);
+  const [messageY, setMessageY] = useState<number>(200);
   // New states for name and designation positions
   const [nameX, setNameX] = useState<number>(250);
   const [nameY, setNameY] = useState<number>(450);
